@@ -21,24 +21,21 @@ class MoneyBox:
 '''
 
 
-class ExtendedStack(list): 
-    def sum(self): 
-        top1 = self.pop()
-        top2 = self.pop()
-        self.append(top1 + top2)
+class MoneyBox:
+    def __init__(self, capacity):
+       self.capacity = capacity
+       self.money = 0
 
-    def sub(self): 
-        top1 = self.pop()
-        top2 = self.pop()
-        self.append(top1 - top2)
+    def can_add(self, v):
+        if self.capacity - self.money >= v:
+            return True
+        else:
+            return False
 
-    def mul(self): 
-        top1 = self.pop()
-        top2 = self.pop()
-        self.append(top1 * top2)
-
-    def div(self): 
-        top1 = self.pop()
-        top2 = self.pop()
-        self.append(top1 // top2)
-
+    def add(self, v):
+        money = 0
+        if self.can_add(v) == True:
+            self.money += v
+            return True
+        else:
+            return False
