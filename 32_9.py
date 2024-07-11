@@ -16,7 +16,7 @@ import re
 import sys
 
 for line in sys.stdin:
-    pattern = r'(\w)\1+' # тут я пронял что пошел куда то не туда
+    pattern = r'(\w)\1+' # тут я пронял что пошел куда то не тудаi
     line = line.rstrip()
 
     s = re.sub(pattern, r'\1', line)
